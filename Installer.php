@@ -3,7 +3,7 @@ namespace Karser\CustomInstaller;
 
 use Composer\Installers\BaseInstaller;
 
-class Symfony2Installer extends BaseInstaller
+class Installer extends BaseInstaller
 {
     protected $locations = array(
         'bundle' => 'src/{$vendor}/{$name}/',

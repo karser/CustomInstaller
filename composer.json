@@ -23,6 +23,6 @@
         }
     ],
     "extra": {
-        "class": "Karser\\CustomInstaller\\Symfony2Installer"
+        "class": "Karser\\CustomInstaller\\Installer"
     }
 }
