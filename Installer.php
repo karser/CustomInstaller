@@ -21,17 +21,18 @@ class Installer extends LibraryInstaller
 
     public function getInstallPath(PackageInterface $package)
     {
-        if (!empty($extra['installer-paths'])) {
-            $prettyName = $package->getPrettyName();
-            $customPath = $this->mapCustomInstallPaths($extra['installer-paths'], $prettyName);
-            if ($customPath !== false) {
-                list($vendor, $name) = explode('/', $prettyName);
-                $vendor = ucfirst($vendor);
-                $name = ucfirst($name);
-
-                return 'src/' . $vendor . '/' . $name . '/';
-            }
-        }
+//        $extra = $this->package->getExtra();
+//        if (!empty($extra['installer-paths'])) {
+//            $prettyName = $package->getPrettyName();
+//            $customPath = $this->mapCustomInstallPaths($extra['installer-paths'], $prettyName);
+//            if ($customPath !== false) {
+//                list($vendor, $name) = explode('/', $prettyName);
+//                $vendor = ucfirst($vendor);
+//                $name = ucfirst($name);
+//
+//                return 'src/' . $vendor . '/' . $name . '/';
+//            }
+//        }
 
         return parent::getInstallPath($package);
     }
