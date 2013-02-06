@@ -8,7 +8,7 @@ Add the code in your composer.json:
 ```js
 {
     "require": {
-        "karser/mainsms-bundle": "dev-master"
+        "karser/custom-installer": "dev-master"
     }
 }
 ```
