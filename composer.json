@@ -1,0 +1,28 @@
+{
+    "name": "karser/custom-installer",
+    "type": "composer-installer",
+    "description": "Symfony2 custom installer",
+    "keywords": ["custom installer"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1,<2.3-dev",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.0.*",
+        "composer/installers": "*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "Karser\\CustomInstaller": "" }
+    },
+    "target-dir": "Karser/CustomInstaller",
+    "authors": [
+        {
+            "name": "Dmitry Poddubny",
+            "email": "dpoddubny@gmail.com"
+        }
+    ],
+    "extra": {
+        "class": "Karser\\CustomInstaller\\Installer"
+    }
+}
