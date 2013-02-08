@@ -25,7 +25,7 @@ class Installer extends LibraryInstaller
     {
         if (is_null($this->installer_paths)) {
             $extra = $this->composer->getPackage()->getExtra();
-            $this->installer_paths = isset($extra['installer-installer_paths']) ? $extra['installer-installer_paths'] : [];
+            $this->installer_paths = isset($extra['installer-paths']) ? $extra['installer-paths'] : [];
         }
 
         return $this->installer_paths;
@@ -33,8 +33,9 @@ class Installer extends LibraryInstaller
 
     public function getInstallPath(PackageInterface $package)
     {
-
         $paths = $this->getInstallerPaths();
+        print_r($paths);
+        die();
         if (!empty($paths)) {
             $prettyName = $package->getPrettyName();
             $customPath = $this->mapCustomInstallPaths($paths, $prettyName);
