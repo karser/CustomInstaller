@@ -34,8 +34,6 @@ class Installer extends LibraryInstaller
     public function getInstallPath(PackageInterface $package)
     {
         $paths = $this->getInstallerPaths();
-        print_r($paths);
-        die();
         if (!empty($paths)) {
             $prettyName = $package->getPrettyName();
             $customPath = $this->mapCustomInstallPaths($paths, $prettyName);
