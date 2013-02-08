@@ -6,6 +6,9 @@ use Composer\Installer\LibraryInstaller;
 
 class Installer extends LibraryInstaller
 {
+    /** @var array */
+    private $installer_paths = null;
+
     protected function mapCustomInstallPaths(array $paths, $name)
     {
         foreach ($paths as $path => $names) {
@@ -18,10 +21,20 @@ class Installer extends LibraryInstaller
         return false;
     }
 
+    private function getInstallerPaths()
+    {
+        if (is_null($this->installer_paths)) {
+            $extra = $this->composer->getPackage()->getExtra();
+            $this->installer_paths = isset($extra['installer-installer_paths']) ? $extra['installer-installer_paths'] : [];
+        }
+
+        return $this->installer_paths;
+    }
+
     public function getInstallPath(PackageInterface $package)
     {
-        $extra = $this->composer->getPackage()->getExtra();
-        $paths = $extra['installer-paths'];
+
+        $paths = $this->getInstallerPaths();
         if (!empty($paths)) {
             $prettyName = $package->getPrettyName();
             $customPath = $this->mapCustomInstallPaths($paths, $prettyName);
