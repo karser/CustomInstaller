@@ -1,7 +1,7 @@
 {
     "name": "karser/custom-installer",
     "type": "composer-installer",
-    "description": "Symfony2 custom installer",
+    "description": "This installer for composer packages allows you to specify custom install path per package in Symfony2",
     "keywords": ["custom installer"],
     "license": "MIT",
     "require": {
